@@ -3352,7 +3352,7 @@ if (jQuery) {
     Waves.displayEffect();
   }, false);
 })(window);
-;(function () {
+;(function ($) {
   'use strict';
 
   var _defaults = {
@@ -3701,7 +3701,7 @@ if (jQuery) {
   window.Materialize.toast = function (message, displayLength, className, completeCallback) {
     return new Toast(message, displayLength, className, completeCallback);
   };
-})();
+})(jQuery);
 ;(function ($) {
 
   var methods = {

@@ -1,5 +1,5 @@
 /*!
- * Materialize v0.100.1 (http://materializecss.com)
+ * Materialize vundefined (http://materializecss.com)
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
@@ -4993,11 +4993,11 @@ if (jQuery) {
 
       // Add initial multiple selections.
       if (multiple) {
-        $select.find("option:selected:not(:disabled)").each(function () {
-          var index = $(this).index();
-
-          toggleEntryFromArray(valuesSelected, index, $select);
-          options.find("li").eq(index).find(":checkbox").prop("checked", true);
+        $select.find("option").each(function (index) {
+          if ($(this).is('option:selected:not(:disabled)')) {
+            toggleEntryFromArray(valuesSelected, index, $select);
+            options.find("li:not(.optgroup)").eq(index).find(":checkbox").prop("checked", true);
+          }
         });
       }
 
